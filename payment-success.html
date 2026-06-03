@@ -2,12 +2,49 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <title>Payment Success</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bellunic - Paiement réussi</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: #f0fff4;
+    }
+    .icon { font-size: 64px; }
+    h2 { color: #388E3C; }
+    p { color: #555; }
+    button {
+      margin-top: 20px;
+      padding: 12px 28px;
+      background: #388E3C;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
+  <div class="icon">✅</div>
+  <h2>Paiement réussi !</h2>
+  <p>Redirection vers l'application...</p>
+  <button onclick="openApp()">Retour à l'app</button>
+
   <script>
-    window.location.href = 'bellunic://payment-success';
+    function openApp() {
+      window.location.href = 'bellunic://payment-success';
+    }
+
+    // ✅ Auto redirect after 1.5 seconds
+    setTimeout(function() {
+      window.location.href = 'bellunic://payment-success';
+    }, 1500);
   </script>
 </body>
 </html>
